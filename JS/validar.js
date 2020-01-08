@@ -48,7 +48,7 @@
         if(re.test(fecha.trim())){
             spanFecha.innerHTML = ``;
         }else{
-            spanFecha.innerHTML = `Fecha incorrecta`;
+            spanFecha.innerHTML = `Fecha incorecta`;
         }
     }
 

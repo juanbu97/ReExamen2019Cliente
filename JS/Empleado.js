@@ -3,10 +3,6 @@
  * @author Juan Antonio Bujalance García
  */
 
-let nombre;
-let fecha;
-let dni;
-let botonNuevoEmpleado;
 
 function Empleado(nombre, fecha, dni) {
     this.nombre = nombre;
@@ -29,9 +25,8 @@ Empleado.prototype.getDni = function(){
 
 
 
-let crearVentana = function () {
-    let empleado = new Empleado(nombre.value, fecha.value, dni.value);
-    let ventana = window.document.open("", "", "");
+Empleado.prototype.crearVentana = function () {
+    let ventana = window.open("", "", "");
     ventana.document.write(`<!DOCTYPE html>
         <html lang="es">
         <head>
@@ -47,26 +42,12 @@ let crearVentana = function () {
               <h1>Bujalance García Juan Antonio</h1>
             </header>
             <main>
-                <h3>${empleado.getNombre()}</h3>
-                <h3>${empleado.getDni()}</h3>
-                <h3>${empleado.getFecha()}</h3>
+                <h3>${this.getNombre()}</h3>
+                <h3>${this.getDni()}</h3>
+                <h3>${this.getFecha()}</h3>
             </main>
         </body>
         </html>`
     );
+    ventana.document.close();
 }
-
-
-let init = () => {
-
-    nombre = document.getElementById("inputNombre");
-    fecha = document.getElementById("inputFecha");
-    dni = document.getElementById("inputDni");
-
-    botonNuevoEmpleado = document.getElementById("botonEnviar");
-    botonNuevoEmpleado.addEventListener("click", crearVentana);
-
-}
-
-document.addEventListener("DOMContentLoaded", init);
-
