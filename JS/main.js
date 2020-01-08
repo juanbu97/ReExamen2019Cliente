@@ -5,7 +5,7 @@
 {
 
     let enlace;
-    let boton;
+    
 
     let generarVentana1 = function(){
         let ventana1 = window.document.open("","","");
@@ -39,6 +39,11 @@
     let init = () =>{
         enlace = document.getElementById("enlace");
         enlace.addEventListener("click",generarVentana1);
+
+        document.getElementsByTagName("button")[0].addEventListener("click", function(){
+            window.open("empleadoIndex.html");
+        })
+
 
       
 

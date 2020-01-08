@@ -9,9 +9,8 @@
      let inputDni;
      let spanDni;
      let spanNombre;
-     //let dniEsCorrecto = false;
-     //let nombreEsCorrecto = false;
-     //let botonEnviar;
+     let spanFecha;
+    
 
     let validarDni = () =>{
         let dni = inputDni.value;
@@ -20,11 +19,10 @@
         let cadena ="TRWAGMYFPDXBNJZSQVHLCKET";
 
         if(re.test(dni.trim())){
-            if(arrayDni[2].toUpperCase() == cadena[arrayDni[1]%23].toUpperCase()){
-                spanDni.innerHTML = `El dni ${arrayDni[0]} es correcto`;
-                dniEsCorrecto = true;
+            if(arrayDni[2].toUpperCase() != cadena[arrayDni[1]%23].toUpperCase()){
+                spanDni.innerHTML = `El dni ${arrayDni[0]} no es correcto`;
             }else{
-                spanDni.innerHTML = `Dni incorrecto`;
+                spanDni.innerHTML = ``;
             }
         }else{
             spanDni.innerHTML = `Formato dni incorrecto`;
@@ -36,8 +34,7 @@
         let nombre = inputNombre.value;
         const re = /^[A-Za-zñóáéíúÁÉÍÓÚÑ]+[ ]?[A-Za-zñóáéíúÁÉÍÓÚÑ]+[ ]?[A-Za-zñóáéíúÁÉÍÓÚÑ]+$/;
         if(re.test(nombre.trim())){
-            spanNombre.innerHTML = `Nombre correcto`;
-            nombreEsCorrecto = true;
+            spanNombre.innerHTML = ``;
         }else{
             spanNombre.innerHTML = `Nombre incorrecto`;
 
@@ -46,16 +43,15 @@
     }
 
     let validarFecha = () =>{//no he tenido tiempo
-
+        let fecha = inputFecha.value;
+        const re = /^([0-2][0-9]|3[0-1])[/-](0[0-9]|1[0-2])[/-]\d{4}$/;
+        if(re.test(fecha.trim())){
+            spanFecha.innerHTML = ``;
+        }else{
+            spanFecha.innerHTML = `Fecha incorrecta`;
+        }
     }
 
-    /* let disableButton = () =>{
-        if(!dniEsCorrecto & !nombreEsCorrecto){
-            botonEnviar.disabled = true;
-        }else{
-            botonEnviar.disabled = true;
-        }
-    } */
 
     let init = () => {
         inputNombre = document.getElementById("inputNombre");
@@ -63,7 +59,7 @@
         inputDni = document.getElementById("inputDni");
         spanDni = document.getElementById("spanDni");
         spanNombre = document.getElementById("spanNombre");
-        //botonEnviar = document.getElementById("botonEnviar");
+        spanFecha = document.getElementById("spanFecha");
 
         inputDni.addEventListener("blur",validarDni);
         inputNombre.addEventListener("blur", validarNombre);
