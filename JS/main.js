@@ -3,11 +3,12 @@
  * @author Juan Antonio Bujalance García
  */
 {
-
     let enlace;
-    
 
-    let generarVentana1 = function(){
+    let init = () =>{
+        enlace = document.getElementById("enlace");
+        enlace.addEventListener("click",() =>{
+            
         let ventana1 = window.document.open("","","");
         ventana1.document.write(`<!DOCTYPE html>
         <html lang="en">
@@ -32,21 +33,11 @@
         </body>
         </html>`);
         ventana1.document.close();
-    }
+        });
 
-
-
-    let init = () =>{
-        enlace = document.getElementById("enlace");
-        enlace.addEventListener("click",generarVentana1);
-
-        document.getElementsByTagName("button")[0].addEventListener("click", function(){
+        document.getElementsByTagName("button")[0].addEventListener("click", () =>{
             window.open("empleadoIndex.html");
-        })
-
-
-      
-
+        });
     }
 
     document.addEventListener("DOMContentLoaded", init);

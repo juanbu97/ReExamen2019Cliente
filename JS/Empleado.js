@@ -3,7 +3,6 @@
  * @author Juan Antonio Bujalance García
  */
 
-
 function Empleado(nombre, fecha, dni) {
     this.nombre = nombre;
     this.fecha = fecha;
@@ -22,9 +21,6 @@ Empleado.prototype.getDni = function(){
     return this.dni;
 }
 
-
-
-
 Empleado.prototype.crearVentana = function () {
     let ventana = window.open("", "", "");
     ventana.document.write(`<!DOCTYPE html>
@@ -42,9 +38,9 @@ Empleado.prototype.crearVentana = function () {
               <h1>Bujalance García Juan Antonio</h1>
             </header>
             <main>
-                <h3>${this.getNombre()}</h3>
-                <h3>${this.getDni()}</h3>
-                <h3>${this.getFecha()}</h3>
+                <h3>Nombre: ${this.getNombre()}</h3>
+                <h3>Dni: ${this.getDni()}</h3>
+                <h3>Fecha: ${this.getFecha()}</h3>
             </main>
         </body>
         </html>`
