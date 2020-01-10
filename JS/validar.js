@@ -8,12 +8,12 @@
     let Validar = {
         validarDni: function(dni){
         const re = /^(\d{8})[ -]?([A-Za-z])$/;
-        let arrayDni = re.exec(dni.trim());
         let cadena ="TRWAGMYFPDXBNJZSQVHLCKET";
 
         if(re.test(dni.trim())){
-            if(arrayDni[2].toUpperCase() != cadena[arrayDni[1]%23].toUpperCase()){
-                return `El dni ${arrayDni[0]} no es correcto`;
+            let [dniCompleto,numeroDni,letraDNI] = re.exec(dni.trim());
+            if(letraDNI.toUpperCase() != cadena[numeroDni%23].toUpperCase()){
+                return `El dni ${dniCompleto} no es correcto`;
             }else{
                 return ``;
             }

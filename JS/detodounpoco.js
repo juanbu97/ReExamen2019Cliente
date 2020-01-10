@@ -45,20 +45,31 @@
     let informar = () => {
         let diaActual = new Date();
         let horaActual;
+        let minutos;
 
 
         elementoPDia.innerHTML = "El día de hoy es "+diaSemana(diaActual.getDay());
 
 
         horaActual = diaActual.getHours();
+        minutos = diaActual.getMinutes();
+
+        if(minutos < 10){
+            minutos = "0"+minutos;
+        }
+
+        if(horaActual < 10){
+            horaActual = "0"+horaActual;
+        }
+
 
         if(horaActual < 18 & horaActual > 8){
-            elementoPHora.innerHTML =`Son las ${diaActual.getHours()}:${diaActual.getMinutes()}. Pronto llegan las vacaciones. Aguanta`;
+            elementoPHora.innerHTML =`Son las ${horaActual}:${minutos}. Pronto llegan las vacaciones. Aguanta`;
         }else if(horaActual > 18){
-            elementoPHora.innerHTML = `Son las ${diaActual.getHours()}:${diaActual.getMinutes()}. Ya es hora de que dejes de trabajar. Hay que conciliar la vida
+            elementoPHora.innerHTML = `Son las ${horaActual}:${minutos}. Ya es hora de que dejes de trabajar. Hay que conciliar la vida
                 laboral con la familiar`;
         }else if (horaActual < 8) {
-            elementoPHora.innerHTML = `Son las ${diaActual.getHours()}:${diaActual.getMinutes()}. Ya es hora de que comiences a trabajar. Hay que levantar el
+            elementoPHora.innerHTML = `Son las ${horaActual}:${minutos}. Ya es hora de que comiences a trabajar. Hay que levantar el
             país.`;
         }
         
