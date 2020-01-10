@@ -41,10 +41,10 @@ let Validar = {
             let [, dia, , mes, anno] = re.exec(fecha);
             dia = Number(dia);
             mes = Number(mes);
-            agno = Number(anno);
+            anno = Number(anno);
             let date = new Date(`${anno}/${mes}/${dia}`);
 
-            if (date.getFullYear() === agno && date.getMonth() === mes - 1 && date.getDate() === dia) {
+            if (date.getFullYear() === anno && date.getMonth() === mes - 1 && date.getDate() === dia) {
                 return "";
             }
             else {
