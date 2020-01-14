@@ -32,9 +32,6 @@ let crearVentana = () => {
         let empleado = new Empleado(inputNombre.value, inputFecha.value, inputDni.value);
         empleado.crearVentana();
         limpiarFormulario(); //limpiar formulario
-    }else{
-        cadenaError = `Por favor rellene el formulario correctamente.`;
-        spanErrorFormulario.innerHTML = cadenaError;
     }
     
 }
