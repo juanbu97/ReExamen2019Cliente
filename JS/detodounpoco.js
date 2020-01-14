@@ -65,10 +65,10 @@
 
         if(horaActual < 18 & horaActual > 8){
             elementoPHora.innerHTML =`Son las ${horaActual}:${minutos}. Pronto llegan las vacaciones. Aguanta`;
-        }else if(horaActual > 18){
+        }else if(horaActual >= 18){
             elementoPHora.innerHTML = `Son las ${horaActual}:${minutos}. Ya es hora de que dejes de trabajar. Hay que conciliar la vida
                 laboral con la familiar`;
-        }else if (horaActual < 8) {
+        }else if (horaActual <= 8) {
             elementoPHora.innerHTML = `Son las ${horaActual}:${minutos}. Ya es hora de que comiences a trabajar. Hay que levantar el
             país.`;
         }
