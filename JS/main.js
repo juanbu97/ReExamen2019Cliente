@@ -3,11 +3,8 @@
  * @author Juan Antonio Bujalance García
  */
 {
-    let enlace;
-
     let init = () =>{
-        enlace = document.getElementById("enlace");
-        enlace.addEventListener("click",() =>{
+        document.getElementById("enlace").addEventListener("click",() =>{
             
         let ventana1 = window.document.open("","","");
         ventana1.document.write(`<!DOCTYPE html>
