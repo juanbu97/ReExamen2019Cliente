@@ -4,8 +4,6 @@
  */
 
 {
-    let botonInformar;
-    let botonSalir;
     let elementoPDia;
     let elementoPHora;
 
@@ -79,16 +77,11 @@
 
 
     let init = () => {
-
         elementoPDia = document.getElementById("elementoPDia");
         elementoPHora = document.getElementById("elementoPHora");
-        
 
-        botonInformar = document.getElementById("botonInformar");
-        botonInformar.addEventListener("click", informar);
-
-        botonSalir = document.getElementById("botonSalir");
-        botonSalir.addEventListener("click", salir);
+        document.getElementById("botonInformar").addEventListener("click", informar);
+        document.getElementById("botonSalir").addEventListener("click", salir);
     }
 
 
