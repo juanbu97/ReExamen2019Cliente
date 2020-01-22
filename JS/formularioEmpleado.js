@@ -11,8 +11,6 @@ let spanNombre;
 let spanFecha;
 let spanErrorFormulario;
 
-let botonNuevoEmpleado;
-
 
 let validarDni = () =>{
     return spanDni.innerHTML = Validar.validarDni(inputDni.value);
@@ -60,10 +58,7 @@ let init = () => {
     inputNombre.addEventListener("blur", validarNombre);
     inputFecha.addEventListener("blur", validarFecha);
 
-    
-
-    botonNuevoEmpleado = document.getElementById("botonEnviar");
-    botonNuevoEmpleado.addEventListener("click", crearVentana);
+    botonNuevoEmpleado = document.getElementById("botonEnviar").addEventListener("click", crearVentana);
 }
 
 document.addEventListener("DOMContentLoaded", init);
