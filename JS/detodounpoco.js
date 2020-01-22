@@ -10,7 +10,6 @@
     let elementoPHora;
 
     let diaSemana = (dia) => {
-        let msg;
         switch (dia) {
             case 1:
                 msg = "Lunes";
