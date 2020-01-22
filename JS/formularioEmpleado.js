@@ -11,7 +11,6 @@ let spanNombre;
 let spanFecha;
 let spanErrorFormulario;
 
-let botonNuevoEmpleado;
 
 
 let validarDni = () =>{
@@ -62,8 +61,8 @@ let init = () => {
 
     
 
-    botonNuevoEmpleado = document.getElementById("botonEnviar");
-    botonNuevoEmpleado.addEventListener("click", crearVentana);
+    botonNuevoEmpleado = document.getElementById("botonEnviar").addEventListener("click", crearVentana);
+    
 }
 
 document.addEventListener("DOMContentLoaded", init);
