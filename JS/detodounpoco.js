@@ -39,26 +39,21 @@
         window.close();
     }
 
+     concatena = (tiempo) =>{
+        if(tiempo < 10)
+            tiempo = "0" + tiempo;
+        return tiempo;
+    }
+
     let informar = () => {
         let diaActual = new Date();
         let horaActual;
         let minutos;
 
-
         elementoPDia.innerHTML = "El día de hoy es "+diaSemana(diaActual.getDay());
 
-
-        horaActual = diaActual.getHours();
-        minutos = diaActual.getMinutes();
-
-        if(minutos < 10){
-            minutos = "0"+minutos;
-        }
-
-        if(horaActual < 10){
-            horaActual = "0"+horaActual;
-        }
-
+        horaActual = concatena(diaActual.getHours());
+        minutos = concatena(diaActual.getMinutes());
 
         if(horaActual < 18 && horaActual > 8){
             elementoPHora.innerHTML =`Son las ${horaActual}:${minutos}. Pronto llegan las vacaciones. Aguanta`;
